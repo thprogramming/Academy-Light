@@ -1,0 +1,176 @@
+/* style.css — ستايلات مشتركة بين كل صفحات الموقع */
+
+html, body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.brand-name {
+  direction: ltr;
+  white-space: nowrap;
+}
+.brand-academy { color: #b423e8; }
+.brand-light { color: #00bfae; }
+.intro-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-inline: 1.25rem;
+  border: 1px solid rgba(84, 79, 192, 0.12);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(87, 223, 254, 0.22), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #f3f2ff 58%, #eefcff 100%);
+  box-shadow: 0 12px 30px rgba(31, 16, 142, 0.08);
+}
+.intro-panel::after {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: -4rem;
+  bottom: -6rem;
+  border-radius: 50%;
+  background: rgba(180, 35, 232, 0.1);
+  content: "";
+  z-index: -1;
+}
+.intro-kicker {
+  border: 1px solid rgba(84, 79, 192, 0.12);
+  box-shadow: 0 4px 12px rgba(31, 16, 142, 0.06);
+}
+.intro-title {
+  max-width: 32rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.35;
+  letter-spacing: 0;
+  background: linear-gradient(90deg, #1f108e 0%, #b423e8 55%, #00687a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.intro-description {
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+.mentor-credit {
+  align-self: flex-start;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(84, 79, 192, 0.16);
+  color: #7c2bbf;
+  font-weight: 600;
+}
+.mentor-icon { color: #b423e8; }
+
+.hero-cover {
+  height: clamp(13rem, 42vw, 22rem);
+  border: 1px solid rgba(84, 79, 192, 0.14);
+  box-shadow: 0 14px 30px rgba(31, 16, 142, 0.1);
+}
+.hero-cover img {
+  transition: transform 0.6s ease;
+}
+.hero-cover:hover img { transform: scale(1.03); }
+.hero-cover-caption { color: #ffffff; }
+.hero-cover-label {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f108e;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+.hero-cover-mark {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 480px) {
+  .intro-panel { padding-inline: 1rem; }
+  .intro-title { font-size: 1.7rem; }
+  .intro-description { font-size: 0.95rem; }
+  .hero-cover { height: 13.5rem; }
+  .hero-cover-caption { align-items: flex-end; }
+  .hero-cover-mark { display: none; }
+}
+
+.game-card-meta {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.game-card-meta > :first-child {
+  min-width: 0;
+}
+
+.age-badge {
+  flex: 0 0 auto;
+}
+
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+main > :first-child { margin-top: 0 !important; }
+main > :last-child { margin-bottom: 0 !important; }
+
+.game-detail-main {
+  padding-bottom: 2rem !important;
+}
+
+.game-detail-main section {
+  min-width: 0;
+}
+
+.game-detail-main .screenshots-carousel {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  direction: ltr;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.game-detail-main .screenshot-card {
+  flex: 0 0 100%;
+  aspect-ratio: 5 / 3;
+  height: auto;
+  scroll-snap-align: start;
+}
+
+.game-action-bar {
+  position: static !important;
+}
+
+@media (min-width: 768px) {
+  .game-detail-main {
+    padding-bottom: 21rem !important;
+  }
+
+  .game-action-bar {
+    position: fixed !important;
+  }
+
+  .game-detail-main .screenshot-card {
+    flex-basis: 240px;
+  }
+}
+
+::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Toast صغير لتأكيد نسخ الرابط */
+.toast {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.toast.show { opacity: 1; }
