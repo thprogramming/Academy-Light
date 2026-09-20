@@ -42,7 +42,7 @@
 
 <div id="toast" class="toast bg-on-surface text-inverse-on-surface">تم نسخ الرابط</div>
 
-<main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-grow">
+<main class="game-detail-main flex flex-col relative w-full pt-16 pb-24 bg-surface flex-grow">
   <div class="flex flex-col w-full px-margin-mobile md:max-w-2xl md:mx-auto gap-gutter-lg pb-8">
 
     <!-- Cover / Play Entry Point -->
@@ -83,9 +83,9 @@
 
     <!-- Programmer Card -->
     <div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container-low">
-      <div class="relative w-16 h-16 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-primary-fixed shrink-0">
+      <a href="programmer.svg" target="_blank" rel="noopener noreferrer" class="relative w-16 h-16 rounded-full overflow-hidden bg-surface-container-high ring-2 ring-primary-fixed shrink-0 block">
         <img class="w-full h-full object-cover" alt="صورة المبرمج" src="programmer.svg"/>
-      </div>
+      </a>
       <div class="flex flex-col">
         <span class="font-code-sm text-code-sm text-primary-container font-semibold">المبرمج</span>
         <h3 class="font-title-lg text-title-lg text-on-surface font-bold">[اسم المبرمج]</h3>
@@ -133,7 +133,7 @@
 </main>
 
 <!-- Fixed Bottom Action Bar -->
-<div class="fixed bottom-0 left-0 w-full p-4 bg-surface-container-lowest/95 backdrop-blur-lg border-t border-outline-variant/30 z-40 pb-safe">
+<div class="game-action-bar fixed bottom-0 left-0 w-full p-4 bg-surface-container-lowest/95 backdrop-blur-lg border-t border-outline-variant/30 z-40 pb-safe">
   <div class="md:max-w-2xl md:mx-auto flex flex-col gap-2.5">
     <a href="play.html" class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3.5 rounded-xl font-label-lg text-label-lg font-bold shadow-sm hover:opacity-95 transition-opacity">
       <span class="material-symbols-outlined text-[20px]">play_arrow</span>
