@@ -170,3 +170,44 @@ main > :last-child { margin-bottom: 0 !important; }
   transition: opacity 0.25s ease;
 }
 .toast.show { opacity: 1; }
+
+.programmer-image-button {
+  cursor: zoom-in;
+  border: 0;
+  padding: 0;
+}
+.image-lightbox[hidden] { display: none; }
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 12, 35, 0.86);
+}
+.image-lightbox img {
+  max-width: min(92vw, 44rem);
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+.image-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 0;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #1f108e;
+  font-family: "Material Symbols Outlined";
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.lightbox-open { overflow: hidden; }
